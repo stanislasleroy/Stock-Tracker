@@ -1,0 +1,10 @@
+#box {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.sentiments {
+  display: flex;
+  flex-direction: row;
+}

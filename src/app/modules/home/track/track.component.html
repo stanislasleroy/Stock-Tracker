@@ -1,0 +1,14 @@
+<form [formGroup]="trackStockForm" (ngSubmit)="trackStock()">
+  <div id="enter-stock">
+    <p>Enter the symbol of a stock to track (i.e. AAPL, TSLA, GOOGL)</p>
+
+    <div id="inputs">
+      <input formControlName="name" placeholder="Stock symbol" />
+      <input
+        type="submit"
+        value="Track Stock"
+        [disabled]="trackStockForm.invalid"
+      />
+    </div>
+  </div>
+</form>

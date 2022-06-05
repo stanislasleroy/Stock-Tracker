@@ -1,0 +1,17 @@
+<div class="sentiment">
+  <div>
+    <ul>
+      <li>
+        {{ sentiment.month | monthName | uppercase }}
+      </li>
+      <li>Change: {{ sentiment.change | numberWithSymbol }}</li>
+      <li>MSPR: {{ sentiment.mspr | number: '1.2-2':'en' }}</li>
+    </ul>
+  </div>
+  <div>
+    <app-stock-trend
+      [appColorTrend]="sentiment.change"
+      [change]="sentiment.change"
+    ></app-stock-trend>
+  </div>
+</div>

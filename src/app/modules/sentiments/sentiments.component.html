@@ -1,0 +1,19 @@
+<ng-container *ngIf="symbol$ | async; let symbol">
+  <div id="box">
+    <h3>{{ symbol.description }} ({{ symbol.symbol }})</h3>
+
+    <div class="sentiments">
+      <ng-container *ngFor="let sentiment of sentiments$ | async">
+        <app-sentiment [sentiment]="sentiment"> </app-sentiment>
+      </ng-container>
+    </div>
+  </div>
+
+  <div id="home">
+    <input
+      type="button"
+      value="< Back to list of stock"
+      (click)="backToHome()"
+    />
+  </div>
+</ng-container>

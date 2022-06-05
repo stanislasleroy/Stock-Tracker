@@ -1,0 +1,8 @@
+<div id="stock-list">
+  <div *ngFor="let stock of stocks; trackBy: identify">
+    <app-stock
+      [stock]="stock"
+      (removeStockEvent)="removeStock($event)"
+    ></app-stock>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<app-track-stock (trackStockEvent)="trackStock($event)"></app-track-stock>
+
+<app-stocks [stocks]="stocks$ | async" (removeStockEvent)="removeStock($event)">
+</app-stocks>

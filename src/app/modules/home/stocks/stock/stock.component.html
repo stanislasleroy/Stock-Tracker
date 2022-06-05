@@ -1,0 +1,47 @@
+<div id="stock">
+  <div id="remove-button">
+    <input type="button" value="X" (click)="removeStock(stock.symbol)" />
+  </div>
+  <h3>{{ stock.name }} ({{ stock.symbol }})</h3>
+
+  <div id="container">
+    <div id="values">
+      <table>
+        <tr>
+          <td>
+            Change today:
+            {{ stock.changePercentToday | percentageWithSymbol }}
+          </td>
+          <td>
+            Opening price:
+            {{ stock.openingPrice | currency: 'USD':'symbol':'1.0-0' }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Current price:
+            {{ stock.currentPrice | currency: 'USD':'symbol':'1.0-0' }}
+          </td>
+          <td>
+            High price:
+            {{ stock.highPrice | currency: 'USD':'symbol':'1.0-0' }}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="trend">
+      <app-stock-trend
+        [appColorTrend]="stock.changePercentToday"
+        [change]="stock.changePercentToday"
+      ></app-stock-trend>
+    </div>
+  </div>
+
+  <div>
+    <input
+      type="button"
+      value="Go to social sentiment details >"
+      (click)="displaySentiment(stock.symbol)"
+    />
+  </div>
+</div>
